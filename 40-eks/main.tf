@@ -1,8 +1,8 @@
 resource "aws_key_pair" "eks" {
   key_name   = "eks"
   # you can paste the public key directly like this
-  #public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6ONJth+DzeXbU3oGATxjVmoRjPepdl7sBuPzzQT2Nc sivak@BOOK-I6CR3LQ85Q"
-  public_key = file("~/.ssh/eks.pub")
+  #public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3lQgtPOXRJPcR6pomdY3sUg7kuS96/8wycH/JCaPlP surya@sunny"
+  public_key = file("~/.ssh/tools.pub")
   # ~ means windows home directory
 }
 
@@ -61,9 +61,10 @@ module "eks" {
       iam_role_additional_policies = {
         AmazonEBSCSIDriverPolicy          = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
         AmazonElasticFileSystemFullAccess = "arn:aws:iam::aws:policy/AmazonElasticFileSystemFullAccess"
+        ElasticLoadBalancingFullAccess = "arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess"
       }
       # EKS takes AWS Linux 2 as it's OS to the nodes
-      key_name = aws_key_pair.eks.key_name
+      key_name = aws_key_pair.tools.key_name
     }
   }
 
