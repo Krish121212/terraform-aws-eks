@@ -1,6 +1,7 @@
 # Infrastructure
 
-![alt text](eks-infra.svg)
+![eks-infra](https://github.com/user-attachments/assets/74d18343-2db8-4c43-be35-ca402066e8c6)
+
 
 Creating above infrastructure involves lot of steps, as maintained sequence we need to create
 * VPC
