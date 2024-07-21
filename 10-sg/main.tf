@@ -149,7 +149,6 @@ resource "aws_security_group_rule" "ingress_public_http" {
   security_group_id = module.ingress.sg_id
 }
 
-#
 resource "aws_security_group_rule" "node_ingress" {
   type              = "ingress"
   from_port         = 30000
