@@ -45,6 +45,7 @@ kubectl get nodes
 * Create expense namespace
 ```
 kubectl create namespace expense
+```
 
 **RDS**:
 * Connect to RDS using bastion host.
